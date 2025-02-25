@@ -43,7 +43,7 @@ def generate_ai_response(user_prompt: str, platform: str) -> str:
         
         # Groq model initialization
         model = ChatGroq(
-            api_key=os.getenv("GROQ_API_KEY"),
+            api_key=st.secrets["GROQ_API_KEY"],
             model_name="llama-3.3-70b-specdec",
             temperature=0.7,
             max_tokens=min(platform_rules['max_length'], 1024)
